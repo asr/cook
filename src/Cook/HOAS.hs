@@ -3,12 +3,12 @@
 -- abstract syntax for λ-expressions.  This makes it possible to use the native
 -- substitution of Haskell.
 
-module HOAS (nf) where
+module Cook.HOAS (nf) where
 
 import qualified Data.Map as M
 
-import Lambda
-import IdInt
+import Cook.Lambda
+import Cook.IdInt
 
 -- With higher order abstract syntax the abstraction in the implemented language
 -- is represented by an abstraction in the implementation language.  We still

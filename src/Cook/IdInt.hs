@@ -1,13 +1,13 @@
 -- 2.2 IdInt
 -- A fast type of identifiers, Ints, for λ-expressions.
 
-module IdInt(IdInt(..), firstBoundId, toIdInt) where
+module Cook.IdInt(IdInt(..), firstBoundId, toIdInt) where
   
 import Control.Monad.State
 import Data.Map (Map)
 import qualified Data.Map as M
 
-import Lambda
+import Cook.Lambda
 
 -- An IdInt is just another name for an Int.
 

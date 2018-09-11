@@ -13,19 +13,32 @@ tested-with:   GHC == 8.4.3
                GHC == 8.0.2
                GHC == 7.10.3
 
+library
+  hs-source-dirs: src
+
+  build-depends:   base
+                 , containers
+                 , mtl
+                 , pretty
+
+  exposed-modules:   Cook.DeBruijn
+                   , Cook.HOAS
+                   , Cook.IdInt
+                   , Cook.Lambda
+                   , Cook.Misc
+                   , Cook.Simple
+                   , Cook.Unique
+
+  default-language:   Haskell2010
+
 executable cook
   hs-source-dirs:     src
   main-is:            Main.hs
   default-language:   Haskell2010
   ghc-options:        -O2 -Wall -threaded
-  build-depends:      base,
-                      containers,
-                      mtl,
-                      pretty
-  other-modules:      DeBruijn,
-                      HOAS,
-                      IdInt,
-                      Lambda,
-                      Misc,
-                      Simple,
-                      Unique
+
+  build-depends:   base
+                 , containers
+                 , cook
+                 , mtl
+                 , pretty

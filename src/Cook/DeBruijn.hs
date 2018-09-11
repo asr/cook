@@ -1,12 +1,12 @@
 -- 6. De Bruijn Indices
 -- The DeBruijn module implements the normal form function by using De Bruijn indices.
 
-module DeBruijn (nf) where
+module Cook.DeBruijn (nf) where
 
 import Data.List (elemIndex)
 
-import Lambda
-import IdInt
+import Cook.Lambda
+import Cook.IdInt
 
 -- Variables are represented by their binding depth, i.e., how many λs out the
 -- binding λ is.  Free variables are represented by negative numbers

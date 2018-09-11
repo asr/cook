@@ -2,13 +2,13 @@
 -- The Unique module implements the normal form function by using Barendregt's
 -- variable convention, i.e., all bound variables are unique.
 
-module Unique (nf) where
+module Cook.Unique (nf) where
   
 import qualified Data.Map as M
 import Control.Monad.State
 
-import Lambda
-import IdInt
+import Cook.Lambda
+import Cook.IdInt
 
 -- The first step is to make all variables unique.  Then the normal form is computed
 -- by repeatedly performing substitution (beta-reduction) on the leftmost redex.

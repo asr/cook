@@ -5,7 +5,7 @@
 -- with a parser and a printer for it.  It also exports a simple type of identifiers
 -- that parse and print in a nice way.
 
-module Lambda (LC(..), freeVars, allVars, Id(..)) where
+module Cook.Lambda (LC(..), freeVars, allVars, Id(..)) where
   
 import Data.List (span, union, (\\))
 import Data.Char (isAlphaNum)

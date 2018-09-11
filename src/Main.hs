@@ -11,42 +11,42 @@ module Main where
 -- together with a parser and a printer for it.  It also exports a simple type of
 -- identifiers that parse and print in a nice way.
 
-import Lambda
+import Cook.Lambda
 
 -- 2.2 IdInt
 -- A fast type of identifiers, Ints, for λ-expressions.
 
-import IdInt
+import Cook.IdInt
 
 -- 3. Naive Substitution
 -- The Simple module implements the normal form function by using a naive
 -- version of substitution.
 
-import qualified Simple
+import qualified Cook.Simple
 
 -- 4. The Barendregt Convention
 -- The Unique module implements the normal form function by using Barendregt's
 -- variable convention, i.e., all bound variables are unique.
 
-import qualified Unique
+import qualified Cook.Unique
 
 -- 5. Higher Order Abstract Syntax
 -- The HOAS module implements the normal form function by using higher order
 -- abstract syntax for λ-expressions.  This makes it possible to use the native
 -- substitution of Haskell.
 
-import qualified HOAS
+import qualified Cook.HOAS
 
 -- 6. De Bruijn Indices
 -- The DeBruijn module implements the normal form function by using De Bruijn indices.
 
-import qualified DeBruijn
+import qualified Cook.DeBruijn
 
 -- 7. Tasting Time
 -- Finally, we want to try out the different implementations.  To this end we have
 -- a simple main program to pick which normal form function to use.
 
-import Misc
+import Cook.Misc
 
 main :: IO ()
 main =
@@ -55,7 +55,7 @@ main =
   where
     f :: LC Id -> LC Id
     f e = e
-    myNF ["S"] = Simple.nf
-    myNF ["U"] = Unique.nf
-    myNF ["H"] = HOAS.nf
-    myNF ["D"] = DeBruijn.nf
+    myNF ["S"] = Cook.Simple.nf
+    myNF ["U"] = Cook.Unique.nf
+    myNF ["H"] = Cook.HOAS.nf
+    myNF ["D"] = Cook.DeBruijn.nf

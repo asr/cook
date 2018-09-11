@@ -1,4 +1,4 @@
-module Misc where
+module Cook.Misc where
   
 import System.Environment (getArgs)
 

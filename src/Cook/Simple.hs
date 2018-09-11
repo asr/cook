@@ -2,12 +2,12 @@
 -- The Simple module implements the normal form function by using a naive
 -- version of substitution.
 
-module Simple (nf) where
+module Cook.Simple (nf) where
 
 import Data.List (union, (\\))
 
-import Lambda
-import IdInt
+import Cook.Lambda
+import Cook.IdInt
 
 -- The normal form is computed by repeatedly performing substitution (beta-
 -- reduction) on the leftmost redex.  Variables and abstractions are easy, but in the
